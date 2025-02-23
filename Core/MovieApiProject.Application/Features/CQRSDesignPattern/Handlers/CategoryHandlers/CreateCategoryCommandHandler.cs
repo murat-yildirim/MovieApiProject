@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace MovieApiProject.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers
 {
-    public class CreateCommandHandler
+    public class CreateCategoryCommandHandler
     {
         private readonly MovieContext _context;
 
-        public CreateCommandHandler(MovieContext context)
+        public CreateCategoryCommandHandler(MovieContext context)
         {
             _context = context;
         }
 
-        public async void Handle(CreateCategoryCommand command)
+        public async Task Handle(CreateCategoryCommand command)
         {
             _context.Categorys.Add(new Category
             {
